@@ -2,12 +2,13 @@ function onLoad(){
   console.log("Hola");
 
 
-  $(".sort-down").siblings("ul").each(function(){
+  $(".sort-down").each(function(){
     setListener($(this));
   } );
 }
 
 function setListener(elem){
-  //console.log("setListener");
-  console.log(elem);
+  elem.on("click", function(){
+    console.log(elem.siblings("ul").attr("hidden"));
+  });
 }
