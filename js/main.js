@@ -2,13 +2,17 @@ function onLoad(){
   console.log("Hola");
 
 
-  $(".option-name").each(function(){
+  $(".sort-down").each(function(){
     setListener($(this));
-  } );
+  });
+
+  $(".option-name>span").each(function(){
+    setListener($(this));
+  });
 }
 
 function setListener(elem){
   elem.on("click", function(){
-    elem.children("ul").attr("hidden", !elem.children("ul").attr("hidden"));
+    elem.siblings("ul").attr("hidden", !elem.siblings("ul").attr("hidden"));
   });
 }
